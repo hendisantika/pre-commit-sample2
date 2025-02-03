@@ -1,0 +1,74 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>id.my.hendisantika</groupId>
+    <artifactId>pre-commit-sample9</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>pre-commit-sample9</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.11.4</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.rudikershaw.gitbuildhook</groupId>
+                <artifactId>git-build-hook-maven-plugin</artifactId>
+                <version>3.5.0</version>
+                <configuration>
+                    <installHooks>
+                        <pre-commit>hooks/pre-commit</pre-commit>
+                        <commit-msg>hooks/commit-msg</commit-msg>
+                    </installHooks>
+                    <gitConfig>
+                        <!-- The location of the directory you are using to store the Git hooks in your project. -->
+                        <core.hooksPath>githooks/</core.hooksPath>
+                        <!-- Some other project specific git config that you want to set. -->
+                        <custom.configuration>true</custom.configuration>
+                    </gitConfig>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <!-- Sets git config specified under configuration > gitConfig. -->
+                            <goal>configure</goal>
+                            <goal>install</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!--    <reporting>-->
+    <!--        <plugins>-->
+    <!--            <plugin>-->
+    <!--                <groupId>org.apache.maven.plugins</groupId>-->
+    <!--                <artifactId>maven-checkstyle-plugin</artifactId>-->
+    <!--                <version>3.6.0</version>-->
+    <!--                <reportSets>-->
+    <!--                    <reportSet>-->
+    <!--                        <reports>-->
+    <!--                            <report>checkstyle</report>-->
+    <!--                        </reports>-->
+    <!--                    </reportSet>-->
+    <!--                </reportSets>-->
+    <!--            </plugin>-->
+    <!--        </plugins>-->
+    <!--    </reporting>-->
+
+</project>
