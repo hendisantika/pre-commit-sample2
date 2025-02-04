@@ -59,7 +59,7 @@
                     <dependency>
                         <groupId>com.puppycrawl.tools</groupId>
                         <artifactId>checkstyle</artifactId>
-                        <version>10.12.4</version> <!-- Use a version >= 8.40 -->
+                        <version>10.21.2</version> <!-- Use a version >= 8.40 -->
                     </dependency>
                 </dependencies>
                 <configuration>
