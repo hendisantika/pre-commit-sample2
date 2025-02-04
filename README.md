@@ -38,13 +38,13 @@ Throughout this article we will be discussing about 2nd approach.
 > NOTE: For the purpose of this article IntelliJ IDE is used. The process will work in any other IDE/ editor you may
 > use.
 
-Project Setup:
+### Project Setup:
 
 We begin by creating a new project:
 
 The only options required to be provided are JDK, GroupId and ArtifactId, you can leave the rest as default.
 
-Configuring Hooks:
+### Configuring Hooks:
 
 Well, this is were the actual task begin. To enable hooks remember the utility we discussed earlier? Yes, utility is
 nothing but a helper function that does the action behind the scenes.
@@ -178,7 +178,9 @@ exit 1
 #### Testing:
 
 ```shell
-mvn clean install
+mvn clean git-build-hook:configure
+mvn clean git-build-hook:initialize
+mvn clean git-build-hook:install
 ```
 
 #### The output of bad commit:
@@ -420,7 +422,9 @@ fi
 ### Testing:
 
 ```shell
-mvn clean install
+mvn clean git-build-hook:configure
+mvn clean git-build-hook:initialize
+mvn clean git-build-hook:install
 ```
 
 An execution of bad formatting will lead commit to fail like following:
