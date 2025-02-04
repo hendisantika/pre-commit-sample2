@@ -425,6 +425,32 @@ mvn clean install
 
 An execution of bad formatting will lead commit to fail like following:
 
+```shell
+[warn] [XHTML5 Sink] Modified invalid anchor name: 'Apache Maven' to 'Apache_Maven'
+[warn] [XHTML5 Sink] Modified invalid anchor name: 'Maven Coordinates' to 'Maven_Coordinates'
+[INFO] Generating "About" report         --- maven-project-info-reports-plugin:3.8.0:index
+[warn] [XHTML5 Sink] Modified invalid anchor name: 'About pre-commit-sample9' to 'About_pre-commit-sample9'
+[INFO] Generating "Plugin Management" report --- maven-project-info-reports-plugin:3.8.0:plugin-management
+[warn] [XHTML5 Sink] Modified invalid anchor name: 'Project Plugin Management' to 'Project_Plugin_Management'
+[INFO] Generating "Plugins" report       --- maven-project-info-reports-plugin:3.8.0:plugins
+[warn] [XHTML5 Sink] Modified invalid anchor name: 'Project Build Plugins' to 'Project_Build_Plugins'
+[warn] [XHTML5 Sink] Modified invalid anchor name: 'Project Report Plugins' to 'Project_Report_Plugins'
+[INFO] Generating "Summary" report       --- maven-project-info-reports-plugin:3.8.0:summary
+[warn] [XHTML5 Sink] Modified invalid anchor name: 'Build Information' to 'Build_Information'
+[warn] [XHTML5 Sink] Modified invalid anchor name: 'Project Information' to 'Project_Information'
+[warn] [XHTML5 Sink] Modified invalid anchor name: 'Project Organization' to 'Project_Organization'
+[warn] [XHTML5 Sink] Modified invalid anchor name: 'Project Summary' to 'Project_Summary'
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.853 s
+[INFO] Finished at: 2025-02-04T07:44:50+07:00
+[INFO] ------------------------------------------------------------------------
+Checkstyle violations found. Fix them before committing.
+Check the Checkstyle report in the 'target/site' directory.
+Hendi Santika: Tue Feb  4 07:44:50 WIB 2025
+```
+
 This way you can configure your maven projects to have strict guidelines to allow for smooth collaboration and maintain
 high coherence.
 

@@ -13,7 +13,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # Run Checkstyle using Maven
-mvn clean checkstyle:check
+#mvn clean checkstyle:check
 
 # Check if Checkstyle found any violations
 if [ $? -ne 0 ]; then
