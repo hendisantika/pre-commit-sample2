@@ -1,5 +1,8 @@
 #!/bin/sh
-
+# Name: pre-commit.sh
+# Date: Thursday, January 30 2025 09.00 WIB
+# Usage: Pre-Commit Check Style Shell Script
+# Author: Hendi Santika {https:/s.id/hendisantika} under GPL v2.x+
 # Run Maven tests
 mvn clean test
 
@@ -10,7 +13,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # Run Checkstyle using Maven
-#mvn clean checkstyle:check
+mvn clean checkstyle:check
 
 # Check if Checkstyle found any violations
 if [ $? -ne 0 ]; then
